@@ -294,7 +294,7 @@
                             
                             <div>
                                 <br>
-                                <a class="download btn btn-success" href="#">Download</a>
+                                <a class="download btn btn-success" href="https://github.com/Pengii/ArmadaBot/releases/latest">Download</a>
                                 
                                 <div>
                                     <br>
@@ -336,7 +336,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>
         function GetLatestReleaseInfo() {
-            $.getJSON("https://api.github.com/repos/Pengii/TraviAnt/releases/latest").done(function(release) {
+            $.getJSON("https://api.github.com/repos/Pengii/ArmadaBot/releases/latest").done(function(release) {
               var asset = release.assets[1];
               var downloadCount = 0;
               for (var i = 0; i < release.assets.length; i++) {
