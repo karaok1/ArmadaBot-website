@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Multilingual Menu in Navbar Template for Bootstrap</title>
+        <!-- Bootstrap core CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="navbar.css" rel="stylesheet">
+
+        <style>* {
+                margin: 0;
+                padding: 0;
+            }
+    
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                margin: 0;
+                border-top: 8px solid #0e1e25;
+            }
+    
+            .main {
+                max-width: 800px;
+                margin: auto;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+    
+            .header {
+                margin-bottom: 64px;
+            }
+    
+            .header h2 {
+                font-weight: 500;
+                font-size: 24px;
+                color: #2d3b41;
+                margin: 0;
+            }
+    
+            .header a {
+                color: inherit;
+                text-decoration: none;
+                border-radius: 4px;
+                padding: 4px;
+            }
+    
+            .header a:hover,
+            .header a:focus {
+                background-color: #E9EBEB;
+            }
+    
+    
+            .header h1 {
+                font-weight: 700;
+                font-size: 80px;
+                color: #0e1e25;
+                margin-top: 8px;
+            }
+    
+            .label {
+                font-weight: 400;
+                font-size: 16px;
+                color: #a3a9ac;
+                margin-bottom: 8px;
+            }
+    
+            [data-netlify-identity-button] a {
+              display: block;
+              position: relative;
+              width: 100%;
+              max-width: 240px;
+              height: auto;
+              padding: 8px 12px;
+              outline: 0;
+              cursor: pointer;
+              border: 2px solid #007a70;
+              border-radius: 4px;
+              background-color: #00ad9F;
+              color: white;
+              transition: background-color 0.2s ease;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 24px;
+              text-align: center;
+              text-decoration: none;
+              white-space: nowrap;
+            }
+
+            [data-netlify-identity-button] a:hover,
+            [data-netlify-identity-button] a:focus {
+              background-color: #007a70;
+              text-decoration: none;
+            }
+    
+            [data-netlify-identity-menu] ul {
+                display: flex;
+            }
+    
+            [data-netlify-identity-menu] li:first-child {
+                margin-right: 16px;
+            }
+    
+            [data-netlify-identity-menu] li {
+                list-style-type: none;
+                display: inline-block;
+            }
+    
+            [data-netlify-identity-menu] a {
+                display: block;
+                position: relative;
+                width: 192px;
+                height: 24px;
+                padding: 8px;
+                outline: 0;
+                cursor: pointer;
+                border: 2px solid #007a70;
+                border-radius: 4px;
+                background-color: #00ad9F;
+                color: white;
+                transition: background-color 0.2s ease;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                text-align: center;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+    
+            [data-netlify-identity-menu] a:hover,
+            [data-netlify-identity-menu] a:focus {
+              background-color: #007a70;
+              text-decoration: none;
+            }
+    
+            .netlify-identity-user-details {
+                display: block;
+            }
+    
+            .netlify-identity-user {
+                font-weight: 500;
+                color: #2d3b41;
+                display: block;
+                margin-top: 8px;
+            }
+    
+            .hands-on-area {
+                display: flex;
+                margin-bottom: 40px;
+            }
+    
+            .single-button {
+                flex-grow: 1;
+                margin-right: 104px;
+                margin-bottom: 40px;
+            }
+    
+            .multiple-buttons {
+                flex-grow: 2;
+            }
+    
+            .single-button div {
+                margin-top: 8px;
+            }
+    
+            .multiple-buttons div {
+                margin-top: 8px;
+            }
+    
+            .call-out svg {
+                display: block;
+                margin-left: 40px;
+                width: 90%;
+                max-width: 420px;
+            }
+    
+            .footer {
+                position: absolute;
+                bottom: 32px;
+                margin-top: 104px;
+            }
+    
+            .github-link {
+                font-weight: 500;
+                font-size: 16px;
+                color: inherit;
+                text-decoration: none;
+            }
+    
+            .github-link:hover,
+            .github-link:focus {
+                text-decoration: underline;
+            }
+    
+            .github-link::before {
+                display: inline-block;
+                position: relative;
+                top: 4px;
+            content: " ";
+                width: 19px;
+                height: 19px;
+                margin-right: 8px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNyIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE3IDE3Ij4gIDxwYXRoIGZpbGw9IiMxNjE1MTQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTkuNDk5MjM0NTUsMS4xODc1IEM0LjkwOTYxMzk0LDEuMTg3NSAxLjE4NzUsNS4wMDMyODcwNCAxLjE4NzUsOS43MTA2Mjc3OCBDMS4xODc1LDEzLjQ3NjE4NjQgMy41NjkwNjA5NywxNi42NzAzOTczIDYuODcyMjIwMjIsMTcuNzk3Mzk2NSBDNy4yODgxMTMxMywxNy44NzU4Nzg0IDcuNDM5NjcxNjQsMTcuNjEyNzAyNiA3LjQzOTY3MTY0LDE3LjM4NjY3NDkgQzcuNDM5NjcxNjQsMTcuMTg0NzE1IDcuNDMyNTI3NDcsMTYuNjQ4NDIyNCA3LjQyODQ0NTA5LDE1LjkzNzM3NjkgQzUuMTE2Mjg0NjUsMTYuNDUyMjE3OCA0LjYyODQzOTcyLDE0Ljc5NDY4MTMgNC42Mjg0Mzk3MiwxNC43OTQ2ODEzIEM0LjI1MDMwODg2LDEzLjgwOTk5NTkgMy43MDUzMTA1NSwxMy41NDc4NjY1IDMuNzA1MzEwNTUsMTMuNTQ3ODY2NSBDMi45NTA1Nzk3NCwxMy4wMTk0MjIxIDMuNzYyNDYzOTMsMTMuMDI5ODg2NCAzLjc2MjQ2MzkzLDEzLjAyOTg4NjQgQzQuNTk2ODAxMjQsMTMuMDkwMDU1OCA1LjAzNTY1NzU2LDEzLjkwODM1OTggNS4wMzU2NTc1NiwxMy45MDgzNTk4IEM1Ljc3NzEyMDYxLDE1LjIxMDYzNTEgNi45ODE0MjQsMTQuODM0NDQ1NSA3LjQ1NDk4MDU5LDE0LjYxNjI2NiBDNy41MzA1MDQ3LDE0LjA2NTg0NjcgNy43NDUzNDAxNywxMy42OTAxODAzIDcuOTgyNjI4NzYsMTMuNDc3MjMyOSBDNi4xMzY4ODA3NCwxMy4yNjIxOTI2IDQuMTk2MjE3MjcsMTIuNTMwNzQxOSA0LjE5NjIxNzI3LDkuMjY0ODUwOTMgQzQuMTk2MjE3MjcsOC4zMzQ1Nzk1MyA0LjUyMDI1NjUzLDcuNTczMzA1NjggNS4wNTE5ODcwOSw2Ljk3Nzg5MDEzIEM0Ljk2NjI1NzAyLDYuNzYyMzI2NjcgNC42ODEwMDA0MSw1Ljg5NTM2Mzk1IDUuMTMzNjM0NzgsNC43MjIzMjIwNiBDNS4xMzM2MzQ3OCw0LjcyMjMyMjA2IDUuODMxMjEyMjEsNC40OTMxNTUwOCA3LjQxOTI1OTcyLDUuNTk2MDg2NTQgQzguMDgyMTM2ODgsNS40MDY2ODM3IDguNzkzNDkyMzYsNS4zMTI1MDU0OSA5LjUwMDI1NTE1LDUuMzA4ODQzIEMxMC4yMDY1MDc2LDUuMzEyNTA1NDkgMTAuOTE3MzUyOCw1LjQwNjY4MzcgMTEuNTgxMjUwNiw1LjU5NjA4NjU0IEMxMy4xNjgyNzc1LDQuNDkzMTU1MDggMTMuODY0ODM0Myw0LjcyMjMyMjA2IDEzLjg2NDgzNDMsNC43MjIzMjIwNiBDMTQuMzE4NDg5Myw1Ljg5NTM2Mzk1IDE0LjAzMzIzMjcsNi43NjIzMjY2NyAxMy45NDgwMTI5LDYuOTc3ODkwMTMgQzE0LjQ4MDc2NDEsNy41NzMzMDU2OCAxNC44MDIyNTE4LDguMzM0NTc5NTMgMTQuODAyMjUxOCw5LjI2NDg1MDkzIEMxNC44MDIyNTE4LDEyLjUzOTExMzMgMTIuODU4NTI2NiwxMy4yNTk1NzY2IDExLjAwNzE2NTMsMTMuNDcwNDMxMSBDMTEuMzA1MTc5MywxMy43MzM2MDY5IDExLjU3MTA0NDYsMTQuMjUzNjc5OSAxMS41NzEwNDQ2LDE1LjA0ODk2MjUgQzExLjU3MTA0NDYsMTYuMTg3OTk1NiAxMS41NjA4Mzg3LDE3LjEwNzI3OTYgMTEuNTYwODM4NywxNy4zODY2NzQ5IEMxMS41NjA4Mzg3LDE3LjYxNDc5NTUgMTEuNzEwODY2MywxNy44ODAwNjQxIDEyLjEzMjM3MjUsMTcuNzk2ODczMyBDMTUuNDMyOTgwMiwxNi42NjcyNTggMTcuODEyNSwxMy40NzUxNCAxNy44MTI1LDkuNzEwNjI3NzggQzE3LjgxMjUsNS4wMDMyODcwNCAxNC4wOTAzODYxLDEuMTg3NSA5LjQ5OTIzNDU1LDEuMTg3NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEgLTEpIi8+PC9zdmc+);
+            }
+    
+            @media (max-width: 880px) {
+                .main {
+                    padding: 16px;
+                }
+    
+                .header h1 {
+                    font-size: 10vw;
+                }
+    
+                .hands-on-area {
+                    flex-direction: column;
+                }
+    
+                [data-netlify-identity-menu] ul {
+                    display: flex;
+                flex-direction: column;
+                }
+    
+                [data-netlify-identity-menu] li {
+                    margin-bottom: 16px;
+                }
+            }
+    
+            @media screen and (max-height: 680px) {
+                .main {
+                    padding: 64px 0;
+                }
+                
+                .footer {
+                    position: relative;
+                    bottom: auto;
+                }
+            }</style>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-dark">
+            <a class="navbar-brand text-light" href="#">ArmadaBot</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample09">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" href="#">Homepage <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://armadabot.netlify.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> <span style="color: aliceblue">English</span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <a class="dropdown-item" href="#tr"><span class="flag-icon flag-icon-tr"> </span>  Türkçe</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <!-- Banner -->
+        <div class="bg-light">
+            <section>
+                <div class="container">
+                    <div class="row justify-content-center" style="height:100vh;">
+                        <div class="col">
+                            
+                            <br>
+                            <h1><span class="display-5 text-secondary">ArmadaBot </span></h1>
+                            <!-- Add a simpler button:
+                                Simple button that will open the modal.
+                            -->
+                            <div>
+                                <p class="text-success">Botu kullanmak için ilk önce aşağıdan bir hesap açmanız gerekiyor. Aynı bilgilerle programa giriş yapabilirsiniz.</p>
+                            </div>
+                            <br>
+                            <div data-netlify-identity-button></div>
+
+                            <br>
+                            <p class="release-info"></p>
+                            
+                            
+                            <div>
+                                <br>
+                                <a class="download btn btn-success" href="https://github.com/Pengii/TraviAnt/releases/latest">Download</a>
+    
+                                <div>
+                                    <br>
+                                    <b class="text-danger">WARNING: </b>
+                                    <b>By using this software you violate Armadabattle ToS rules.</b>
+                                    <b>I'm not responsible for any harm done by using this software.</b>
+                                    <br>
+                                    <br>
+                                    <b class="text-danger">UYARI: </b>
+                                    <b>Bu programı kullanaraktan Armadabattle kullanım sözleşmesini ihlal edersiniz, programın kullanımından</b>
+                                    <b>doğacak herhangi bir yazılımsal veya hukuksal sorunlardan kendiniz sorumlusunuz!</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <br>
+                            <br>
+                            <h6>Sürüm notları ve kullanım kılavuzu (30/8/2019):</h6>
+                            <ul>
+                                <li>Oyun tam yüklenmeden botu başlatmayınız.</li>
+                                <li>
+                                    Bot şuanda henüz yapım aşamasında ve sadece ışınlanmaya dayalı kutu topluyor (ban riski var)
+                                    <br>
+                                </li>
+                                <br>
+                                <p>Eğer herhangi bir sorun veya sorunuz olursa Discord sunucuna bekleriz.</p>
+                                <p>İlk kurulumdan itibaren güncellemeler otomatik yapılacaktır, tekrar indirmenize gerek yok.</p>
+                                <a href="https://www.elitepvpers.com/forum/browsergames/4653144-release-traviant-travian-pvp-bot-ttwars.html" class="btn btn-secondary">Elitepvpers</a>
+
+                                <a href="https://discord.gg/CjErj7H" class="btn btn-primary">Discord Server</a>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        function GetLatestReleaseInfo() {
+            $.getJSON("https://api.github.com/repos/Pengii/TraviAnt/releases/latest").done(function(release) {
+              var asset = release.assets[1];
+              var downloadCount = 0;
+              for (var i = 0; i < release.assets.length; i++) {
+                downloadCount += release.assets[i].download_count;
+              }
+              var oneHour = 60 * 60 * 1000;
+              var oneDay = 24 * oneHour;
+              var dateDiff = new Date() - new Date(asset.updated_at);
+              var timeAgo;
+              if (dateDiff < oneDay) {
+                timeAgo = (dateDiff / oneHour).toFixed(1) + " hours ago";
+              } else {
+                timeAgo = (dateDiff / oneDay).toFixed(1) + " days ago";
+              }
+              var releaseInfo = "Güncel sürüm: v" + release.tag_name + ", Güncellendi: " + timeAgo + ". İndirme sayısı: " + downloadCount.toLocaleString() + " kere.";
+              $(".download").attr("href", asset.browser_download_url);
+              $(".release-info").text(releaseInfo);
+              $(".release-info").fadeIn("slow");
+            });
+          }
+          
+          GetLatestReleaseInfo();
+        </script>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    </body>
+</html>
