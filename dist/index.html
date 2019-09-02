@@ -256,7 +256,7 @@
             <div class="collapse navbar-collapse" id="navbarsExample09">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#">Homepage <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-light" href="#">Anasayfa <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://armadabot.netlify.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> <span style="color: aliceblue">English</span></a>
@@ -283,16 +283,14 @@
                                 Simple button that will open the modal.
                             -->
                             <div>
-                                <p class="text-success">Botu kullanmak için ilk önce aşağıdan bir hesap açmanız gerekiyor. Aynı bilgilerle programa giriş yapabilirsiniz.</p>
+                                <p class="text-dark">Botu ücretsiz olarak aşağıdan indirebilirsiniz:</p>
                             </div>
-                            <br>
-                            <div data-netlify-identity-button></div>
-                            <br>
-                            <br>
                             <a class="download btn btn-success" href="https://github.com/Pengii/ArmadaBot/releases/latest">Download</a>
                             <br>
                             <br>
                             <p class="release-info"></p>
+
+                            <img src="https://i.hizliresim.com/GZ4W5b.png" class="rounded float-left img-fluid" alt="#">
                             
                             
                             <div>
@@ -327,11 +325,11 @@
                         <div class="col">
                             <br>
                             <br>
-                            <h6>Sürüm notları ve kullanım kılavuzu (30/8/2019):</h6>
+                            <h6>Sürüm notları ve kullanım kılavuzu (02/9/2019):</h6>
                             <ul>
                                 <li>Oyun tam yüklenmeden botu başlatmayınız.</li>
                                 <li>
-                                    Bot şuanda henüz yapım aşamasında ve sadece ışınlanmaya dayalı kutu topluyor (ban riski var)
+                                    Bot şuanda henüz yapım aşamasında ve toplama konusunda takılmalar mevcut, zamanla düzeltilecektir.
                                     <br>
                                 </li>
                                 <br>
@@ -351,7 +349,6 @@
                                 <b class="text-danger">UYARI: </b>
                                 <b>Bu programı kullanaraktan Armadabattle kullanım sözleşmesini ihlal edersiniz, programın kullanımından</b>
                                 <b>doğacak herhangi bir yazılımsal veya hukuksal sorunlardan kendiniz sorumlusunuz!</b>
-
                             </ul>
                         </div>
                     </div>
@@ -375,7 +372,7 @@
               if (dateDiff < oneDay) {
                 timeAgo = (dateDiff / oneHour).toFixed(1) + " hours ago";
               } else {
-                timeAgo = (dateDiff / oneDay).toFixed(1) + " days ago";
+                timeAgo = (dateDiff / oneDay).toFixed(1) + " gün önce";
               }
               var releaseInfo = "Güncel sürüm: v" + release.tag_name + ", Güncellendi: " + timeAgo + ". İndirme sayısı: " + downloadCount.toLocaleString() + " kere.";
               $(".download").attr("href", asset.browser_download_url);
@@ -385,6 +382,37 @@
           }
           
           GetLatestReleaseInfo();
+        </script>
+        
+        <script>
+        exports.handler = function(event, context, callback) {
+        const data = JSON.parse(event.body);
+        const { user } = data;
+        
+        const validateUser = email => {
+            if (email.split("@")[1] === "trust-this-company.com") {
+            return ["editor"];
+            } else {
+            return ["visitor"];
+            }
+        };
+            
+        const roles = validateUser(user.email)
+
+        const responseBody = {
+            app_metadata: {
+                roles: ["visitor"],
+                my_user_info: "this is some user info"
+            },
+            user_metadata: {
+                full_name: "Jessica Jones",
+                email: "jessica@aliasinvestigations.com"
+            }
+        };
+        callback(null, {
+            statusCode: 200,
+            body: JSON.stringify(responseBody)
+        });
         </script>
 
         <!-- Bootstrap core JavaScript
