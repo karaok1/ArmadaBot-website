@@ -256,7 +256,7 @@
             <div class="collapse navbar-collapse" id="navbarsExample09">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#">Anasayfa <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-light" href="#">Homepage <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://armadabot.netlify.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> <span style="color: aliceblue">English</span></a>
@@ -281,16 +281,13 @@
                                 Simple button that will open the modal.
                             -->
                             <div>
-                                <p class="text-info">DUYURU: Beta aşaması bitene kadar bundan sonra yeni lisanslar dağıtılmayacak. Bugüne kadar indirenler geri bildirim vermek şartıyla kullanmaya devam edebilirler.</p>
+                                <p class="text-info">WARNING: This bot is now in beta stage.</p>
                             </div>
                             <a class="download btn btn-success" href="https://github.com/Pengii/ArmadaBot/releases/latest">Download</a>
                             <br>
                             <br>
                             <p class="release-info"></p>
 
-                            <img src="https://i.hizliresim.com/GZ4W5b.png" class="rounded float-left img-fluid" alt="#">
-                            
-                            
                             <div>
                                 <div>
 
@@ -322,44 +319,36 @@
                         
                         <div class="col">
                             <br>
-                            <br>
-                            <h6>Sürüm notları ve kullanım kılavuzu (05/9/2019):</h6>
+                            <h6>Release notes v1.0.5 (09/09/2019):</h6>
                             <ul>
                                 <li>
-                                    Toplama konusunda düzeltmeler yapıldı. Yakında yavaş modda toplama özelliği eklenecektir.
+                                    Improved collecting logic.
                                     <br>
                                 </li>
                                 <li>
-                                    Canavar ve NPC vurma özellikleri henüz aktif değil, yakında eklenecektir.
+                                    All expiring licenses extended for 30 days. Enjoy it :).
+                                </li>
+                                <li>
+                                    You can delete the CefSharp and Microfost created shortcuts on your desktop. They are useless.
                                 </li>
                                 <br>
                             </ul>
-                            <br>
-                            <h6>Sürüm notları ve kullanım kılavuzu (02/9/2019):</h6>
-                            <ul>
-                                <li>Oyun tam yüklenmeden botu başlatmayınız.</li>
-                                <li>
-                                    Bot şuanda henüz yapım aşamasında ve toplama konusunda takılmalar mevcut, zamanla düzeltilecektir.
-                                    <br>
-                                </li>
-                                <br>
-                                <p>Eğer herhangi bir sorun veya sorunuz olursa Discord sunucuna bekleriz.</p>
-                                <p>İlk kurulumdan itibaren güncellemeler otomatik yapılacaktır, tekrar indirmenize gerek yok.</p>
-                                <a href="#" class="btn btn-secondary">Elitepvpers</a>
+                            <p>If you have any issues, you are welcome to the Discord server.</p>
+                            <p>After first installation, updates will be done automatically.</p>
+                            <a href="#" class="btn btn-secondary">Elitepvpers</a>
 
-                                <a href="https://discord.gg/eZvBcUm" target="_blank" class="btn btn-primary">Discord Server</a>
-                                <br>
-                                <br>
-                                <br>
-                                <b class="text-danger">WARNING: </b>
-                                <b>By using this software you violate Armadabattle ToS rules.</b>
-                                <b>I'm not responsible for any harm done by using this software.</b>
-                                <br>
-                                <br>
-                                <b class="text-danger">UYARI: </b>
-                                <b>Bu programı kullanaraktan Armadabattle kullanım sözleşmesini ihlal edersiniz, programın kullanımından</b>
-                                <b>doğacak herhangi bir yazılımsal veya hukuksal sorunlardan kendiniz sorumlusunuz!</b>
-                            </ul>
+                            <a href="https://discord.gg/eZvBcUm" target="_blank" class="btn btn-primary">Discord Server</a>
+                            <br>
+                            <br>
+                            <br>
+                            <b class="text-danger">WARNING: </b>
+                            <b>By using this software you violate Armadabattle ToS rules.</b>
+                            <b>I'm not responsible for any harm done by using this software.</b>
+                            <br>
+                            <br>
+                            <b class="text-danger">UYARI: </b>
+                            <b>Bu programı kullanaraktan Armadabattle kullanım sözleşmesini ihlal edersiniz, programın kullanımından</b>
+                            <b>doğacak herhangi sorunlardan kendiniz sorumlusunuz!</b>
                         </div>
                     </div>
                 </div>
@@ -382,9 +371,9 @@
               if (dateDiff < oneDay) {
                 timeAgo = (dateDiff / oneHour).toFixed(1) + " hours ago";
               } else {
-                timeAgo = (dateDiff / oneDay).toFixed(1) + " gün önce";
+                timeAgo = (dateDiff / oneDay).toFixed(1) + " days ago";
               }
-              var releaseInfo = "Güncel sürüm: v" + release.tag_name + ", Güncellendi: " + timeAgo + ". İndirme sayısı: " + downloadCount.toLocaleString() + " kere.";
+              var releaseInfo = "Version: v" + release.tag_name + ", Updated: " + timeAgo + ". Downloaded " + downloadCount.toLocaleString() + " times.";
               $(".download").attr("href", asset.browser_download_url);
               $(".release-info").text(releaseInfo);
               $(".release-info").fadeIn("slow");
